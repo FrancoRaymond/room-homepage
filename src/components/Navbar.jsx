@@ -22,13 +22,14 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
     
-
     useEffect(() => {
         if (navRef.current) {
             if (menuOpen) {
                 navRef.current.classList.add('active')
+                document.body.style.overflow = 'hidden'
             } else {
                 navRef.current.classList.remove('active')
+                document.body.style.overflow = 'auto'
             }
         }
     }, [menuOpen])
